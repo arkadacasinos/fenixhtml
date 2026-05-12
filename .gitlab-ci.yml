@@ -3,11 +3,11 @@ image: alpine:latest
 pages:
   stage: deploy
   script:
-    - mkdir .public_build
-    - cp -r * .public_build
-    - mv .public_build public
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
   artifacts:
     paths:
       - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
+  only:
+    - main
